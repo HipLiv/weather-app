@@ -58,3 +58,26 @@ function getCurrentPosition() {
 }
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getCurrentPosition);
+
+// Convert the temperature unit celsius and fahrenheit
+function convertoCelsius(event) {
+  event.preventDefault();
+  let celsius = document.querySelector("#celsius");
+  let Cdegrees = document.querySelector("#currentTemperature");
+
+  Cdegrees.innerHTML = "10";
+}
+
+let celsiusClick = document.querySelector("#celsius");
+celsiusClick.addEventListener("click", convertoCelsius);
+
+function convertoFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = document.querySelector("#fahrenheit");
+  let Fdegrees = document.querySelector("#currentTemperature");
+
+  Fdegrees.innerHTML = "60";
+}
+
+let fahrenheitClick = document.querySelector("#fahrenheit");
+fahrenheitClick.addEventListener("click", convertoFahrenheit);
