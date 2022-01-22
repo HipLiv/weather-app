@@ -1,0 +1,54 @@
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  color: #00204a;
+  background: linear-gradient(
+    109.6deg,
+    rgb(17, 151, 147) 11.2%,
+    rgb(154, 214, 212) 55.4%,
+    rgb(255, 233, 171) 100.2%
+  );
+  background-size: contain;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+  background: #d5eeff;
+}
+h1 {
+  padding: 15px;
+  margin: 0;
+}
+h3 {
+  text-align: center;
+}
+.icon {
+  font-size: 48px;
+}
+.search {
+  margin: 10px 0;
+}
+.card-body {
+  padding: 0;
+}
+.overview {
+  font-size: 14px;
+}
+p {
+  margin: 0;
+}
+.temperature {
+  font-size: 24px;
+}
+.row {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+#location-form {
+  padding: 10px;
+}
