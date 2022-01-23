@@ -53,7 +53,8 @@ function showPosition(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
-function getCurrentPosition() {
+function getCurrentPosition(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 let locationButton = document.querySelector("#location-button");
