@@ -78,3 +78,11 @@ h3 .active:hover {
   vertical-align: middle;
   letter-spacing: 0.6px;
 }
+#weatherDescription {
+  font-style: italic;
+  font-size: 14px;
+}
+#wind {
+  font-style: italic;
+  font-size: 14px;
+}
