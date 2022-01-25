@@ -61,3 +61,20 @@ h3 .active {
 h3 .active:hover {
   text-decoration: none;
 }
+
+#celsius {
+  font-size: 16px;
+  vertical-align: middle;
+  letter-spacing: 0.6px;
+}
+
+#fahrenheit {
+  font-size: 16px;
+  vertical-align: middle;
+  letter-spacing: 0.6px;
+}
+.hyphen {
+  font-size: 16px;
+  vertical-align: middle;
+  letter-spacing: 0.6px;
+}
