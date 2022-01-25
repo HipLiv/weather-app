@@ -22,6 +22,8 @@ if (minutes < 10) {
 
 now.innerHTML = `${day} ${hours}:${minutes}`;
 
+let celsiusTemperature = null;
+
 function showWeather(response) {
   document.querySelector("#searchedCity").innerHTML = response.data.name;
   document.querySelector("#currentTemperature").innerHTML = Math.round(
@@ -32,6 +34,7 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -79,10 +82,9 @@ celsiusClick.addEventListener("click", convertoCelsius);
 
 function convertoFahrenheit(event) {
   event.preventDefault();
-  let fahrenheit = document.querySelector("#fahrenheit");
-  let Fdegrees = document.querySelector("#currentTemperature");
-
-  Fdegrees.innerHTML = "60";
+  let Fdegrees = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#currentTemperature");
+  temperatureElement.innerHTML = Math.round(Fdegrees);
 }
 
 let fahrenheitClick = document.querySelector("#fahrenheit");
