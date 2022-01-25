@@ -52,3 +52,12 @@ a {
 #location-form {
   padding: 10px;
 }
+
+h3 .active {
+  color: black;
+  cursor: default;
+}
+
+h3 .active:hover {
+  text-decoration: none;
+}
