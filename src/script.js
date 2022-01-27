@@ -24,6 +24,34 @@ now.innerHTML = `${day} ${hours}:${minutes}`;
 
 let celsiusTemperature = null;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weatherForecast");
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  days.forEach(function (day) {
+    let forecastHTML = "";
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="row">
+      <div class="col-2.4" id="weatherForecast">
+          <p><img class="iconForecast" id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="" width="60"></p>
+               <div id="weatherForecast">  
+                  <span class="temperature" id="forecastTemperature">12°C</span>
+                    <div id="dayForecast"><em>${day}</em></div>
+                  </div>              
+      </div>
+    </div>`;
+  });
+}
+
 function showWeather(response) {
   document.querySelector("#searchedCity").innerHTML = response.data.name;
   document.querySelector("#currentTemperature").innerHTML = Math.round(
@@ -41,6 +69,7 @@ function showWeather(response) {
   );
   celsiusTemperature = response.data.main.temp;
   console.log(response.data);
+  displayForecast();
 }
 
 function search(city) {
