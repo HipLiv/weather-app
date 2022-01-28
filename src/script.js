@@ -35,21 +35,22 @@ function displayForecast() {
     "Saturday",
     "Sunday",
   ];
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
-    let forecastHTML = "";
     forecastHTML =
       forecastHTML +
       `
-  <div class="row">
-      <div class="col-2.4" id="weatherForecast">
+      <div class="col" id="weatherForecast">
           <p><img class="iconForecast" id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="" width="60"></p>
                <div id="weatherForecast">  
                   <span class="temperature" id="forecastTemperature">12°C</span>
                     <div id="dayForecast"><em>${day}</em></div>
                   </div>              
-      </div>
     </div>`;
   });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function showWeather(response) {
