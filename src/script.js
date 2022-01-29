@@ -24,7 +24,7 @@ now.innerHTML = `${day} ${hours}:${minutes}`;
 
 let celsiusTemperature = null;
 
-function formatDay(date) {
+function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = day.getDay();
   let days = [
@@ -52,7 +52,7 @@ function displayForecast() {
     "Sunday",
   ];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (forecastDay, index) {
+  forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
@@ -95,6 +95,15 @@ function showWeather(response) {
   celsiusTemperature = response.data.main.temp;
   console.log(response.data);
   displayForecast();
+}
+
+function getForecast(coordinates) {
+  let apiKEY = "ac8953c5828dcc35be83ca782e677826";
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "ac8953c5828dcc35be83ca782e677826";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function search(city) {
