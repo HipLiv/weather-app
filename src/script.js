@@ -64,7 +64,7 @@ function displayForecast(response) {
                <div id="weatherForecast">  
                   <span class="temperature" id="forecastTemperature">${Math.round(
                     forecastDay.temp.day
-                  )}</span>
+                  )}°C</span>
                     <div id="dayForecast"><em>${formatDay(
                       forecastDay.dt
                     )}</em></div>
