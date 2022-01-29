@@ -26,7 +26,7 @@ let celsiusTemperature = null;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = day.getDay();
+  let day = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -39,7 +39,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weatherForecast");
   let days = [
@@ -94,16 +94,15 @@ function showWeather(response) {
   );
   celsiusTemperature = response.data.main.temp;
   console.log(response.data);
-  displayForecast();
+  getForecast(response.data.coord);
 }
 
 function getForecast(coordinates) {
-  let apiKEY = "ac8953c5828dcc35be83ca782e677826";
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
+  let latitude = coords.lat;
+  let longitude = coords.lon;
   let apiKey = "ac8953c5828dcc35be83ca782e677826";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  https: axios.get(apiUrl).then(displayForecast);
 }
 
 function search(city) {
